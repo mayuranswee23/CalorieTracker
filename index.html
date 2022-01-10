@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Tracker</title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">Calorie Tracker</h1>
+    </div>
+    <div class="calorie-box">
+        <div class="calorie-ingredient">
+            <label for="foodChoice">Ingredient: </label>
+            <input class="customer-input" type="text" id="food-choice" placeholder="Enter Ingredient">
+        </div>
+        <div class="calorie-qty">
+            <label for="food-quantity">Quantity:</label>
+            <input class="customer-input"type="text" id="food-quantity" placeholder="Enter Serving Portion Size">
+        </div>
+        <div class="calorie-unit">
+            <label for="unit">Serving Unit:</label>
+            <select name="unit" class="select-dropdown">
+                <option value="" disabled selected>Enter the serving size unit</option>
+                <option value="grams">grams</option>
+                <option value="cup">cup(s)</option>
+                <option value="ounces">ounces</option>
+                <option value="tablespoon">tablespoon(s)</option>
+                <option value="teaspoon">teaspoon(s)</option>
+            </select>
+        </div>
+        <div class="buttons">
+            <button class="btn" id="add-meal">Add Meal</button>
+            <button class="btn" id="calculate">Calculate</button>
+        </div>
+    </div>
+</body>
+</html>

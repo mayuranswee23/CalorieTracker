@@ -21,3 +21,11 @@
 .white{
     color: white;
 }
+
+.nutrition {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    background-color: #94cdb8;
+    height: 15rem; 
+    width: 45rem;
+}

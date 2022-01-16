@@ -11,10 +11,11 @@
     margin-left: 0.8rem;
     background-color: #94cdb8;
     width: 30rem;
-    height: 15rem;
+    height: 16rem;
 }
-
-
+.btn{
+    margin-top: 0.5rem
+}
 .form-inputs {
     margin-top: 0.7rem;
     /* margin-left: 0.5rem; */
@@ -34,7 +35,7 @@
     margin-top: 2rem;
     margin-left: 0.8rem;
     background-color: #94cdb8;
-    height: 15rem; 
+    height: 16rem; 
     width: 37.5rem;
    
 }

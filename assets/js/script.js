@@ -18,7 +18,8 @@ function getData(meal) {
         if (response.ok){
             response.json().then(function(data){
                 console.log(data);
-                calculateData(data);
+                populateData(data);
+                fillCard(meal)
             })
         } else {
             console.log("error");
@@ -28,21 +29,50 @@ function getData(meal) {
 
 
 //get data from the customers's form input
-function formInput(selectedUnit, quantityValue, ingredientValue){
+async function formInput(selectedUnit, quantityValue, ingredientValue){
 var selectedUnit = units.value;
 var quantityValue = quantity.value;
 var ingredientValue = ingredient.value;
-var meal = quantityValue + " " + selectedUnit + " " + ingredientValue
+var meal = quantityValue + " " + selectedUnit + " of " + ingredientValue
 getData(meal)
 }
 
-function calculateData(data){
+//populate the page with the nutrition info
+function populateData(data){
     var calories = data.calories
     var grams = data.totalWeight
-    console.log(calories)
-    console.log(grams)
+    var fats = Math.round(data.totalNutrients.FAT.quantity);
+    var cholesterol = Math.round(data.totalNutrients.CHOLE.quantity);
+    var protein = Math.round(data.totalNutrients.PROCNT.quantity);
+    var carbs = Math.round(data.totalNutrients.CHOCDF.quantity);
+    var salt = Math.round(data.totalNutrients.NA.quantity);
+    var calcium  = Math.round(data.totalNutrients.CA.quantity);
+    
+    var totalCalories = document.querySelector(".calories-consumed");
+    totalCalories.innerText = calories + " " + data.totalNutrientsKCal.ENERC_KCAL.unit;
+
+    var totalCarbs = document.querySelector(".carbs");
+    totalCarbs.innerText = carbs + " " + data.totalNutrients.CHOCDF.unit;
+
+    var totalFat = document.querySelector(".fats");
+    totalFat.innerText = fats + " " + data.totalNutrients.FAT.unit;
+
+    var totalProtein = document.querySelector(".protein");
+    totalProtein.innerText = protein + " " + data.totalNutrients.PROCNT.unit;
+
+    var totalCholes = document.querySelector(".cholesterol")
+    totalCholes.textContent = cholesterol + " " + data.totalNutrients.CHOLE.unit
+
+    var totalCalcium = document.querySelector(".calcium")
+    totalCalcium.textContent = calcium + " " + data.totalNutrients.CA.unit
+
+    var totalSodium = document.querySelector(".sodium")
+    totalSodium.innerText = salt + " " + data.totalNutrients.NA.unit
+
+    
 }
 
+//get today's date
 function getDate(){
     var today = new Date();
     var date  = (today.getMonth()+1) + "/" + today.getDate()+ "/" + today.getFullYear();
@@ -50,6 +80,32 @@ function getDate(){
     presentDay.innerText = date
 }
 
+function fillCard(meal){
+    var mealCard = document.querySelector (".meal-card")
+    mealCard.classList.remove("hidden")
+    var info = document.createElement("div");
+    var mealNumber = document.querySelector(".meal-number");
+    mealNumber.innerText = "Meal One";
+
+    var cardBody = document.querySelector(".card-text");
+    cardBody.innerText = meal;
+
+    var nutrientInfo = document.querySelector(".nutrient-info");
+
+    var totalCalories = document.querySelector(".calories-consumed").innerText;
+    var totalCarbs = document.querySelector(".carbs").innerText;
+    var totalFat = document.querySelector(".fats").innerText;
+    var totalProtein = document.querySelector(".protein").innerText; 
+    
+    var HTML = `<div> Calories: ${totalCalories} </div>
+                <div> Carbs: ${totalCarbs} </div>
+                <div> Fats: ${totalFat} </div>
+                <div> Protein: ${totalProtein} </div>`
+
+    info.innerHTML = HTML
+    
+    nutrientInfo.appendChild(info)
+}
 
 
 calculatebtn.addEventListener("click", formInput)

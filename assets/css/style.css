@@ -6,16 +6,23 @@
 }
 
 .form-information{
+    border: 0.25rem solid black;
     margin-top: 2rem;
+    margin-left: 0.8rem;
     background-color: #94cdb8;
     width: 30rem;
-    height: 15rem
+    height: 15rem;
 }
 
 
 .form-inputs {
     margin-top: 1rem;
-    width: 25rem
+    width: 25rem;
+    
+}
+
+.food-quantity{
+    font-size: 150%
 }
 
 .white{
@@ -23,9 +30,39 @@
 }
 
 .nutrition {
+    border: 0.25rem solid black;
     margin-top: 2rem;
-    margin-left: 2rem;
+    margin-left: 0.8rem;
     background-color: #94cdb8;
     height: 15rem; 
-    width: 45rem;
+    width: 37.5rem;
+   
+}
+
+.today{
+    margin-top: 0.5rem
+}
+
+.meal-card{
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+.card{
+    float: left;
+    background-color: #94cdb8;
+    border-width: 0.25rem; 
+    border-color: black;
+    height: 15rem;
+    width: 20rem;
+}
+
+.meal2{
+    margin-left: 1rem;
+}
+
+/* to hide the card from appearing on the page */
+/* remove class to let image appear on page */
+.hidden{
+    display: none;
 }

@@ -19,21 +19,20 @@
         <div class="form-information">
             <form>
                 <div class="form-inputs ingredient">
-                    <label for="food-quantity">Ingredient</label>
+                    <label for="food-quantity"><span class="labels">Ingredient</span></label>
                     <input class="form-control customer-input" type="text" id="food-ingredient" placeholder="Enter Ingredient" autocomplete="off" />
                 </div>
                 
                 <div class="form-inputs quantity">
-                <label for="food-quantity">Quantity</label>
+                <label for="food-quantity"><span class="labels">Quantity</span></label>
                 <div class="input-group mb-3 ">
                     <input class="form-control customer-input" type="text" id="food-quantity" placeholder="Enter Portion Size" autocomplete="off" />
-                    <button class="btn btn-success btn-outline-success dropdown-toggle white" type="button" data-bs-toggle="dropdown" aria-expanded="false">Select Units</button>                   
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><button class="dropdown-item" >grams</button></li>
-                        <li><button class="dropdown-item" >cups</button></li>
-                        <li><button class="dropdown-item" >liters</button></li>
-                        <li><button class="dropdown-item" >tablespoons</button></li>
-                      </ul>
+                    <select name="unit-type" class="select-dropdown btn-success">
+                        <option value="" disable selected>Select Units</option>
+                        <option value="grams">grams</option>
+                        <option value="cups">cups</option>
+                        <option value="teaspoon">teaspoon</option>
+                    </select>    
                   </div>
                 </div>
 
@@ -47,11 +46,32 @@
         </div>
 
         <div class="nutrition">
-            <h3 class="">Total Calories:<span class="total-calories"></span></h3>
+            <h4 class="today">Date: <span class="date"></span></h4>
+            <h5 class="total calories">Total Calories: <span class="calories-consumed"></span></h5>
         </div>      
+
+        <div class="meal-card">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><span class="meal-number">Meal One</span></h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+              <div class="card meal2">
+                <div class="card-body">
+                  <h5 class="card-title"><span class="meal-number">Meal One</span></h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+        </div>
+      
+
+
+        
     </div>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
 

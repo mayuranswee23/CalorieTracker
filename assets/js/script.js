@@ -43,5 +43,14 @@ function calculateData(data){
     console.log(grams)
 }
 
+function getDate(){
+    var today = new Date();
+    var date  = (today.getMonth()+1) + "/" + today.getDate()+ "/" + today.getFullYear();
+    var presentDay = document.querySelector("#date")
+    presentDay.innerText = date
+}
+
+
 
 calculatebtn.addEventListener("click", formInput)
+getDate()

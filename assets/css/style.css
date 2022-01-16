@@ -16,13 +16,13 @@
 
 
 .form-inputs {
-    margin-top: 1rem;
+    margin-top: 0.7rem;
+    /* margin-left: 0.5rem; */
     width: 25rem;
-    
 }
 
-.food-quantity{
-    font-size: 150%
+.labels{
+    font-size: 1.25rem
 }
 
 .white{
